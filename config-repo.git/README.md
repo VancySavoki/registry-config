@@ -1,4 +1,4 @@
-[中文](config-repo.git/README-zh.md)
+[中文](README-zh.md)
 # sample-config
 Spring Cloud External Configuration Repository
 
