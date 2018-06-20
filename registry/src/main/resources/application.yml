@@ -8,12 +8,12 @@ spring:
       server:
         git:
           #uri: file:///root/documents/java/registry-config/config-repo.git
-          uri: https://gitee.com/savoki/registry-config.git
+          uri: https://gitee.com/savoki/registry-config.git/
           #username: user
           #password: 123456
   #
-  # use spring.cloud.config.location specified the search location
+  # use spring.config.location specified the search location
   #
   #
   config:
-    location: /config-repo
+    location: /optional/config/file/path
