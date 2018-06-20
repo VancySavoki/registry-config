@@ -1,0 +1,19 @@
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://${security.user.name}:${security.user.password}@localhost:${server.port}/eureka/
+spring:
+  cloud:
+    config:
+      server:
+        git:
+          #uri: file:///root/documents/java/registry-config/config-repo.git
+          uri: https://gitee.com/savoki/registry-config.git
+          #username: user
+          #password: 123456
+  #
+  # use spring.cloud.config.location specified the search location
+  #
+  #
+  config:
+    location: /config-repo

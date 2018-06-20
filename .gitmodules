@@ -1,0 +1,3 @@
+[submodule "config-repo.git"]
+	path = config-repo.git
+	url = https://gitee.com/savoki/config-repo.git

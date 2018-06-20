@@ -1,0 +1,54 @@
+allprojects {
+    //apply plugin: 'java'
+    apply plugin: 'org.springframework.boot'
+    apply plugin: 'application'
+
+    mainClassName = "com.trivia.Application"
+
+
+}
+// JVM 版本号要求
+sourceCompatibility = 1.8
+targetCompatibility = 1.8
+buildscript {
+    project.ext {
+        bootVersion = '1.4.7.RELEASE'
+        cloudVersion = '1.2.0.RELEASE'
+        seurityVersion = '2.0.7.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        classpath "org.springframework.boot:spring-boot-gradle-plugin:${project.bootVersion}"
+
+    }
+}
+subprojects {
+
+    version = '0.0.2'
+    ext {
+        bootVersion = '1.4.7.RELEASE'
+        cloudVersion = '1.2.0.RELEASE'
+        seurityVersion = '2.0.7.RELEASE'
+    }
+    repositories {
+        mavenLocal()
+        maven { url 'http://maven.aliyun.com/nexus/content/groups/public/' }
+        mavenCentral()
+        jcenter()
+    }
+
+    dependencies {
+        compile "org.springframework.cloud:spring-cloud-starter-config:${cloudVersion}"
+        compile "org.springframework.cloud:spring-cloud-starter-eureka:${cloudVersion}"
+        compile "org.springframework.cloud:spring-cloud-starter-security:${cloudVersion}"
+        testCompile "org.springframework.boot:spring-boot-starter-test:${bootVersion}"
+    }
+
+
+}

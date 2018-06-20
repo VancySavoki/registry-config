@@ -1,0 +1,1 @@
+### config server denpendencies and configuration

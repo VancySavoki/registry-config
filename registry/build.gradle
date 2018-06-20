@@ -1,0 +1,13 @@
+archivesBaseName = 'registry'
+springBoot {
+    executable = true
+}
+dependencies {
+
+    compile project(":bootstrap")
+    compile project(':config')
+    compile "org.webjars:bootstrap:3.3.7"
+    compile "org.springframework.cloud:spring-cloud-starter-eureka-server:${cloudVersion}"
+
+}
+

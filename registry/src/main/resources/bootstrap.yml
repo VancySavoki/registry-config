@@ -1,0 +1,29 @@
+spring:
+  profiles:
+    active: dev
+  application:
+    name: REGISTRY-CONFIG
+  cloud:
+    config:
+      enabled: false # do not fetch configuration from config server in avoid of bootstrap fail
+security:
+  user:
+    name: ${spring.application.name}
+    password: 123456
+eureka:
+  environment: ${spring.profiles.active}
+  client:
+    fetchRegistry: true
+    registerWithEureka: true
+  instance:
+    prefer-ip-address: true
+    instance-id: ${spring.application.name}-${server.port}-${random.long}
+  server:
+    enable-self-preservation: false
+    eviction-interval-timer-in-ms: 1000
+management:
+  context-path: /__mgmt__${random.value}/
+  security:
+    roles: ADMIN
+server:
+  port: 8761
