@@ -1,4 +1,4 @@
-[英文](config-repo.git/README.md)
+[英文](README.md)
 # 示例配置仓库
 Spring Cloud Config Server外部git配置仓库
 
